@@ -2,8 +2,7 @@
 let storedNumber = 0.0;
 
 let currentLine = [""];
-let currentNumberString = '';
-let currentNumber = 0;
+
 let displayTestNum = 0;
 const operators = ['+','-','/','X',];
 const commands = ['=','C'];
@@ -62,8 +61,6 @@ function userInput(input){
     }
 }
 function clear(){
-    currentNumberString = '';
-    currentNumber = 0;
     currentLine = [''];
 }
 function solveCurrentLine(line){

@@ -2,6 +2,7 @@ body{
     position:absolute;
     height : 100%;
     width : 100%;
+    background: #2460A7FF;
 }
 
 #container{
@@ -12,9 +13,6 @@ body{
     grid-gap: 10px;
   
     
-
-
-    background-color: red;
     height: 100%;
     width:100%;
     max-height: 800px;
@@ -23,22 +21,34 @@ body{
     left: 50%;
     top: 10%;
     transform: translate(-50%);
+
+    
 }
 
 button{
+    background: #85B3D1FF;
     font-family: monospace;
     font-size: 25px;
-
+    border-radius: 10px;
 }
 
 .commands{
+    background:#D9B48FFF;
     grid-column-start: 1;
     grid-column-end: 4;
 }
 
 #display{
+    border-radius: 50px;
+    height: 100px;
+    font-size: 50px;
+    background: #B3C7D6FF;
     grid-column-start: 1;
     grid-column-end: 4;
-
+    text-align: center;
     
 }
+
+
+
+
