@@ -1,12 +1,13 @@
 
 let storedNumber = 0.0;
 
-let currentLine = [];
+let currentLine = [""];
 let currentNumberString = '';
 let currentNumber = 0;
 let displayTestNum = 0;
 const operators = ['+','-','/','X',];
 const commands = ['=','C'];
+
 
 function add(num1, num2){
     return num1+num2;
@@ -38,51 +39,51 @@ function operate(num1, operator, num2){
 
 function userInput(input){
     if(operators.includes(input)){
-        currentNumber = currentNumberString; //Set number int
-        currentNumberString = ''; //clear number String
-
-        currentLine.push(currentNumber);
         currentLine.push(input);
+        upDateDisplay(currentLine);
+        currentLine.push("");
         //adds currentNumber, adds input to current working line, moves on!
     }
     else if(commands.includes(input)){
         if(input == '='){ //read EVERYTHING
-            currentNumber = currentNumberString; //Set number int
-            currentNumberString = ''; //clear number String
-    
-            currentLine.push(currentNumber);
-            displayTestNum = solveCurrentLine(currentLine);
+            displayTestNum = solveCurrentLine(currentLine);            
+            currentLine = [displayTestNum];
 
-            clear();
+            upDateDisplay(currentLine);
         }
         else{ //input == C
             clear();
+            upDateDisplay(currentLine);
         }
     }
     else{
-        currentNumberString += input; //adding number to current number
+        currentLine[currentLine.length-1] += input; //adding number to current [working]number
+        upDateDisplay(currentLine);
     }
 }
 function clear(){
     currentNumberString = '';
     currentNumber = 0;
-    currentLine = [];
+    currentLine = [''];
 }
 function solveCurrentLine(line){
     let answer = 0;
-    
     while(line.length != 1){
         answer = operate(line[0],line[1],line[2]);
         line.shift();
         line.shift();
-    
         line[0]= answer;
     }
     console.log(answer);
     return answer;
-
 }
 
+function upDateDisplay(line){
+    display.innerHTML = line.toString();
+}
+
+const display = document.querySelector('#display');
+console.log(display.innerHTML);
 
 var btns = document.querySelectorAll('button');
 

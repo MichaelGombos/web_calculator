@@ -8,13 +8,17 @@ body{
     position:relative;
     display:grid;
     grid-template-columns: repeat(3,auto);
-    grid-template-rows: repeat(4,auto);
+    grid-template-rows: repeat(8,auto);
+    grid-gap: 10px;
+  
     
+
+
     background-color: red;
     height: 100%;
     width:100%;
-    max-height: 700px;
-    max-width: 500px;
+    max-height: 800px;
+    max-width: 600px;
 
     left: 50%;
     top: 10%;
@@ -24,5 +28,17 @@ body{
 button{
     font-family: monospace;
     font-size: 25px;
+
+}
+
+.commands{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+#display{
+    grid-column-start: 1;
+    grid-column-end: 4;
+
     
 }
